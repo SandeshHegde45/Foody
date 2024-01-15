@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container">
-        {foodCat.length > 0 ? (
+        {foodCat ? (
           foodCat.map((data) => {
             return (
               <div className="row mb-3">

@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Signup() {
   const [credentials, setCredentials] = useState({
@@ -8,10 +9,10 @@ export default function Signup() {
     password: "",
     geolocation: "",
   });
+  axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://foodyapi-two.vercel.app/api/createuser", {
-      method: "POST",
+    const response = await axios.post("https://foodyapi-two.vercel.app/api/createuser", {
       headers: {
         "Content-Type": "application/json",
       },

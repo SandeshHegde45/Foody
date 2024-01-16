@@ -1,9 +1,11 @@
 import React from "react";
+import axios from "axios";
  import Delete from "@material-ui/icons/Delete";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
+  axios.defaults.withCredentials = true;
   if (data.length === 0) {
     return (
       <div>
@@ -14,8 +16,7 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch("https://foodyapi-two.vercel.app/api/orderData", {
-      method: "POST",
+    let response = await axios.post("https://foodyapi-two.vercel.app/api/orderData", {
       headers: {
         "Content-Type": "application/json",
       },

@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
@@ -7,11 +8,12 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [foodItem, setFoodItem] = useState([]);
   const [foodCat, setFoodCat] = useState([]);
+  axios.defaults.withCredentials = true;
 
   const loadData = async () => {
-    let response = await fetch("https://foodyapi-two.vercel.app/api/foodData", {
-      method: "POST",
+    let response = await axios.post("https://foodyapi-two.vercel.app/api/foodData", {
       headers: { "Content-Type": "application/json" },
+      withCredentials: true,
     });
     response = await response.json();
     setFoodItem(response[0]);

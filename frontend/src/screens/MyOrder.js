@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import axios from "axios";
 
 export default function MyOrder() {
   const [orderData, setOrderData] = useState("");
+  axios.defaults.withCredentials = true;
 
   const fetchMyOrder = async () => {
     console.log(localStorage.getItem("userEmail"));
-    await fetch("https://foodyapi-two.vercel.app/api/myOrderData", {
-      method: "POST",
+    await axios.post("https://foodyapi-two.vercel.app/api/myOrderData", {
       headers: {
         "Content-Type": "application/json",
       },

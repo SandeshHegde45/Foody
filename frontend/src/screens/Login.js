@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -7,10 +8,10 @@ export default function Login() {
     password: "",
   });
   let navigate = useNavigate();
+  axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://foodyapi-two.vercel.app/api/loginuser", {
-      method: "POST",
+    const response = await axios.post("https://foodyapi-two.vercel.app/api/loginuser", {
       headers: {
         "Content-Type": "application/json",
       },

@@ -4,7 +4,7 @@ const port = 5000;
 const mongoDB = require("./db");
 const cors = require("cors");
 app.use(cors({
-  origin: ["https://foody-frontend-jade.vercel.app"],
+  origin: ["https://foody-frontend-two.vercel.app"],
   methods: ["POST", "GET"],
   credentials: true,
 }));

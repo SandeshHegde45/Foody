@@ -11,7 +11,7 @@ export default function Home() {
   axios.defaults.withCredentials = true;
 
   const loadData = async () => {
-    let response = await axios.post("https://foodyapi-two.vercel.app/api/foodData", {
+    let response = await axios.post("https://foody-api-phi.vercel.app/api/foodData", {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     });

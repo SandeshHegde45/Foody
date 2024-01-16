@@ -15,9 +15,15 @@ export default function Home() {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     });
-    response = await response.json();
-    setFoodItem(response[0]);
-    setFoodCat(response[1]);
+
+    const responseData = response.data;
+
+    if (responseData && responseData.length >= 2) {
+      setFoodItem(responseData[0]);
+      setFoodCat(responseData[1]);
+    } else {
+      console.log("Error");
+    }
     //console.log(item, cat);
     //  console.log(response[0], response[1]);
   };

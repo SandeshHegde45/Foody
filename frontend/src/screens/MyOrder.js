@@ -17,7 +17,7 @@ export default function MyOrder() {
         email: localStorage.getItem("userEmail"),
       }),
     }).then(async (res) => {
-      let response = await res.json();
+      let response = await res.data;
       await setOrderData(response);
     });
   };

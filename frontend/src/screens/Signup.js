@@ -23,7 +23,7 @@ export default function Signup() {
         location: credentials.geolocation,
       }),
     });
-    const json = await response.json();
+    const json = await response.data;
     console.log(json);
     if (!json.success) {
       alert("Something went wrong");

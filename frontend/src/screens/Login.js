@@ -20,7 +20,7 @@ export default function Login() {
         password: credentials.password,
       }),
     });
-    const json = await response.json();
+    const json = await response.data;
     console.log(json);
     if (!json.success) {
       alert("Something went wrong");

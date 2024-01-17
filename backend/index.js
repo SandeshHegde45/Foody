@@ -1,27 +1,24 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const MongoDB = require('./db');
-const cors = require('cors');
-
-const port = 5050;
-
+const port = 5000;
+const mongoDB = require("./db");
+const cors = require("cors");
 app.use(cors({
-    origin: ["https://foody-beta-blond.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
+  origin: ["https://foody-frontend-two.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true,
 }));
 
-MongoDB();
+mongoDB();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-})
-
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 app.use(express.json());
 app.use('/api', require('./Routes/CreateUser'));
 app.use('/api', require('./Routes/DisplayData'));
 app.use("/api", require("./Routes/OrderData"));
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-})
+  console.log(`Example app listening at http://localhost:${port}`);
+});

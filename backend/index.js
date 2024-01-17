@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const MongoDB = require('./db');
+const cors = require('cors');
 
 const port = 5050;
 
 app.use(cors({
-    origin: ["https://foody-frontend-two.vercel.app"],
+    origin: ["https://foody-beta-blond.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
 }));

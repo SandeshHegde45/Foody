@@ -16,7 +16,7 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await axios.post("https://foodyapi-two.vercel.app/api/orderData", {
+    let response = await axios.post("https://foody-api-five.vercel.app/api/orderData", {
       headers: {
         "Content-Type": "application/json",
       },

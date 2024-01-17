@@ -11,7 +11,7 @@ export default function Login() {
   axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("https://foodyapi-two.vercel.app/api/loginuser", {
+    const response = await axios.post("https://foody-api-five.vercel.app/api/loginuser", {
       headers: {
         "Content-Type": "application/json",
       },

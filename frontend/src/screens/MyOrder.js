@@ -9,7 +9,7 @@ export default function MyOrder() {
 
   const fetchMyOrder = async () => {
     console.log(localStorage.getItem("userEmail"));
-    await axios.post("https://foodyapi-two.vercel.app/api/myOrderData", {
+    await axios.post("https://foody-api-five.vercel.app/api/myOrderData", {
       headers: {
         "Content-Type": "application/json",
       },

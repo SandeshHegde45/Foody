@@ -11,7 +11,7 @@ export default function Home() {
   axios.defaults.withCredentials = true;
 
   const loadData = async () => {
-    let response = await axios.post("https://foody-api-phi.vercel.app/api/foodData", {
+    let response = await axios.post("https://foody-api-five.vercel.app/api/foodData", {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     });
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container">
-        {foodCat ? (
+        {foodCat.length > 0 ? (
           foodCat.map((data) => {
             return (
               <div className="row mb-3">

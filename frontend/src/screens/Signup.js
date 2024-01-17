@@ -12,7 +12,7 @@ export default function Signup() {
   axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("https://foodyapi-two.vercel.app/api/createuser", {
+    const response = await axios.post("https://foody-api-five.vercel.app/api/createuser", {
       headers: {
         "Content-Type": "application/json",
       },
